@@ -16,3 +16,24 @@ Non-functional:
 2)	Scalability: The app needs to be able to scale based on the number of users accessing it. The app needs to perform smoothly even under heavy loads.
 3)	Security: As security is very important, there will be a need for layers of security. For example, there should be a two-step verification feature to provide adequate security to ensure the user their information is kept private.
 
+Reflection
+Conduct initial stakeholder interviews and gather user requirements -------------->  Log in Features has been requested, calander view, day clicked opened, schedule blocking, notifications via email, accepted/declined, attended
+Date/Time reminders, settings, avatars, recurring meeting, note taking, user time blocking, meeting set up (as a group), pick attendees( mandatory/optional ), meeting set up ( solo ), click icon or username, select availible time.
+all of these features have been requested by the client. Some clarification may be needed in the future regarding the scope of some of these requirements. 
+Create a draft project plan and define the project scope -------------->
+ Set up the project on GitHub and create an initial project board on Trello --------------> https://github.com/NoahDaniels1/NEDD-Project-Repo is the required github link to set up  the project. and https://trello.com/b/wnITrGcq/kanban-dev-board is the link for the required trello board.
+ Create wireframes and design mockups for the user interface --------------> Pictures of wireframe will be added seperate
+ Develop the basic architecture of the software -------------->Architechture
+                                                                     |
+                            -------------------------------------------------------------------------------------------
+                            |                                                                                         |
+                            V                                                                                         V
+it will be done using SQL or POSTGRESQL                                                             It will contain a button that confirms the appointment
+It will contain A table named appointmentTBL                                                        A visual representation of appointment confirmation will be shown to the user either through an image or plain text
+It will contain a variable named currentDate with the data type DATE                                A calendar displaying dates available will be shown to the user
+It will contain a table named customerTBL                                                           A calendar displaying dates unavailable will also be shown to the user
+Create a registration system with a login/logout button to manage users.                            Create function which allows to edit | delete appointments
+Create a push notification system to notify user of upcoming appointments.                          Create visual representation to user on appointment changes
+Create a log in feature                                                                             Create a settings option to change things like profile picture and notification settings
+Add functionality to set up recurring meetings.
+Create and assign tasks for the Sprint1 on Trello --------------> Image will be added seperate
