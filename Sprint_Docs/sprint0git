@@ -1,0 +1,18 @@
+Class: CSCE 3444
+Project: Appointment App
+Team Name: NEDD
+Team Lead: Noah Daniels
+Members: Edwin Smith, Dewey Holland, Daniel Hughes
+
+Sprint 0
+
+Features
+Functional:
+1)	User registration: The user will be able to create an account with unique personal information and linked with an email address.
+2)	Schedule an appointment: There will be a user-friendly GUI that will allow the user to make an appointment based on date, preferred doctor, and time.
+3)	Notifications and Alerts: There will be a system in place to send out push notifications to the user’s email address to notify them of their appointments when they are made. There will also be alerts sent out for cancellations made by the doctor.
+Non-functional:
+1)	Database: There will be a database to store the user’s account information and to hold the appointment information.
+2)	Scalability: The app needs to be able to scale based on the number of users accessing it. The app needs to perform smoothly even under heavy loads.
+3)	Security: As security is very important, there will be a need for layers of security. For example, there should be a two-step verification feature to provide adequate security to ensure the user their information is kept private.
+
