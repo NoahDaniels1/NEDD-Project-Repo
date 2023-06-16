@@ -1,7 +1,9 @@
+//Imports
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, TextInput, Switch } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
+//Setting up the icons
 const NavigationIcons = () => {
   const [currentPage, setCurrentPage] = useState('home');
   const [username, setUsername] = useState('');
@@ -9,21 +11,24 @@ const NavigationIcons = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [notificationsEnabled, setNotificationsEnabled] = useState(false);
 
+//Setting whatever page is currently active to highlighted UNT green
   const handleIconPress = (page) => {
     setCurrentPage(page);
   };
 
+//Setting up the login page to only login if both the username and password fields are not blank
   const handleLogin = () => {
     if (username !== '' && password !== '') {
       setIsLoggedIn(true);
     }
   };
 
+//Sets default page after login to the Home page
   const handleLogout = () => {
     setIsLoggedIn(false);
     setCurrentPage('home');
   };
-
+//Setting up the Login Page with username and password
   if (!isLoggedIn) {
     return (
       <View style={styles.container}>
@@ -50,6 +55,7 @@ const NavigationIcons = () => {
     );
   }
 
+//Styling the Pages
   return (
     <View style={styles.container}>
       {currentPage !== 'userProfile' && (
@@ -100,6 +106,7 @@ const NavigationIcons = () => {
   );
 };
 
+//Creating StyleSheet
 const styles = StyleSheet.create({
   container: {
     flex: 1,
