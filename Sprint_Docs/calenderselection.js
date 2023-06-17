@@ -4,7 +4,7 @@ import { StyleSheet, SafeAreaView, View, Text, Button, Platform } from 'react-na
 import DatePicker from 'react-native-datepicker';
 
 const App = () => {
-  const [date, setDate] = useState(null); //date setdate usestate
+  const [selectedDates, setSelectedDates] = useState([]); //updated formatting to include multiple dates
 
   const formatDate = (date) => { //format date
     if (!date) {
@@ -24,16 +24,22 @@ const App = () => {
   };
 
   const onChange = (selectedDate) => { //set date
-    setDate(selectedDate);
+    setSelectedDates([...selectedDates, selectedDate]);
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <View style={styles.datePickerContainer}> 
+        {selectedDates.map((date, index) => (
+          <View key={index} style={styles.datePickerContainer}>
+            <Text style={styles.calendarText}>Appointment {index + 1}</Text>
+            <Text style={styles.selectedDateText}>{formatDate(date)}</Text>
+          </View>
+        ))}
+        <View style={styles.datePickerContainer}>
           <Text style={styles.calendarText}>Appointment Selection</Text>
           <DatePicker
-            date={date}
+            date={null}
             mode='datetime'
             format='YYYY-MM-DD:HH:mm'
             minDate={new Date()}
@@ -42,12 +48,12 @@ const App = () => {
             customStyles={{
               dateIcon: {
                 position: 'absolute',
-                left: "35%", // Adjust the left position here
-                top: 4, // Adjust the top position here
+                left: "35%", // adjust the left position here
+                top: 4, //Adjust the top position here
               },
               dateInput: {
                 borderWidth: 0,//adjust borderwidth here
-                paddingLeft: 25, // Adjust the left padding here
+                paddingLeft: 25,// Adjust the left padding here
               },
               dateText: {
                 color: 'transparent', // Make the text transparent
@@ -60,12 +66,10 @@ const App = () => {
             onDateChange={onChange}
           />
         </View>
-        <Text style={styles.placeholderText}>{date ? formatDate(date) : 'No Appointments'}</Text>
       </View>
-      
     </SafeAreaView>
   );
-  //formatting, text inside and outside container
+  //formatting, the text inside and outside the container
 };
 
 const styles = StyleSheet.create({
@@ -93,7 +97,7 @@ const styles = StyleSheet.create({
     color: 'black',
     marginBottom: 10,
   },
-  placeholderText: {
+  selectedDateText: {
     fontSize: 18,
     color: 'black',
   },
