@@ -28,6 +28,7 @@ const NavigationIcons = () => {
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [selectedTime, setSelectedTime] = useState('');
   const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
+  const [accountInformation, setAccountInformation] = useState('');
 
   //Setting whatever page is currently active to highlighted UNT green
   const handleIconPress = (page) => {
@@ -84,6 +85,16 @@ const NavigationIcons = () => {
     hideTimePicker();
   };
 
+  //Create an account
+  const handleCreateAccount = () => {
+    Alert.prompt('Welcome, please fill in the prompt below:', (text) => {
+      //This portion is for entering information
+      if (text.trim() !== '') {
+        setAccountInformation(text);
+      }
+    });
+  };
+
   //Setting up the Login Page with username and password and showpassword button
   if (!isLoggedIn) {
     return (
@@ -117,6 +128,12 @@ const NavigationIcons = () => {
         >
           <Text style={styles.loginButtonText}>Login</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.forgotPasswordButton}>
+          <Text style={styles.buttonText}>Forgot Password</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.createAccountButton}>
+          <Text style={styles.buttonText}>Create an Account</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -145,7 +162,8 @@ const NavigationIcons = () => {
       )}
       {currentPage === 'calendar' && (
         <View style={styles.calendarContainer}>
-          <Text style={styles.pageTitle}>Calendar</Text>
+          <Text style={styles.pageTitleCalendar}>Calendar</Text>
+          <Calendar />
           <TouchableOpacity style={styles.datePickerButton} onPress={showDatePicker}>
             <Text style={styles.datePickerButtonText}>
               {selectedDate ? selectedDate : 'Select Date'}
@@ -168,7 +186,6 @@ const NavigationIcons = () => {
             onConfirm={handleTimeConfirm}
             onCancel={hideTimePicker}
           />
-          <Calendar />
         </View>
       )}
       <View style={styles.navigation}>
@@ -187,11 +204,11 @@ const NavigationIcons = () => {
         </TouchableOpacity>
         <TouchableOpacity
           style={
-            currentPage === 'home'
+            currentPage === 'Home'
               ? styles.activeNavigationIcon
               : styles.navigationIcon
           }
-          onPress={() => handleIconPress('home')}>
+          onPress={() => handleIconPress('Home')}>
           <FontAwesome
             name="home"
             size={24}
@@ -200,11 +217,11 @@ const NavigationIcons = () => {
         </TouchableOpacity>
         <TouchableOpacity
           style={
-            currentPage === 'notifications'
+            currentPage === 'Notifications'
               ? styles.activeNavigationIcon
               : styles.navigationIcon
           }
-          onPress={() => handleIconPress('notifications')}>
+          onPress={() => handleIconPress('Notifications')}>
           <FontAwesome
             name="bell"
             size={24}
@@ -265,7 +282,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: -100, //Adjusted login container at a higher location
+    marginTop: 0, //Adjusted login container at a higher location
   },
   input: {
     height: 40,
@@ -281,7 +298,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#00853E',
     paddingVertical: 12,
     paddingHorizontal: 40,
-    borderRadius: 5,
+    borderRadius: 50,
     marginTop: 5,
     marginBottom: 5,
   },
@@ -292,9 +309,27 @@ const styles = StyleSheet.create({
   },
   showPasswordButton: {
     backgroundColor: '#00853E',
-    marginTop: 5,
+    marginTop: 25,
     marginBottom: 5,
   },
+  forgotPasswordButton: {
+  backgroundColor: 'transparent',
+    paddingVertical: 12,
+    paddingHorizontal: 40,
+    borderRadius: 5,
+    marginTop: 5,
+    marginBottom: 0,
+    borderColor: '#00853E',
+  },
+  createAccountButton: {
+  marginTop: 5,
+  },
+  buttonText: {
+  color: '#00853E',
+  fontSize: 18,
+  fontWeight: 'bold',
+  textAlign: 'center',
+},
   userProfileContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -310,28 +345,31 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   notificationText: {
-    fontSize: 16,
+    fontSize: 18,
     marginRight: 10,
   },
   logoutButton: {
     backgroundColor: '#00853E',
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 30,
     borderRadius: 5,
     marginTop: 20,
   },
   logoutButtonText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
+  },
+  pageTitleCalendar: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 10,
   },
   calendarContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  calendar: {
-    marginBottom: 20,
   },
   datePickerButton: {
     backgroundColor: '#00853E',
