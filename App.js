@@ -85,6 +85,7 @@ const NavigationIcons = () => {
     hideTimePicker();
   };
 
+
   //Create an account
   const handleCreateAccount = () => {
     Alert.prompt('Welcome, please fill in the prompt below:', (text) => {
