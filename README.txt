@@ -78,5 +78,33 @@ Login.js contains the necessary functions for the login screen. within haandlelo
 
 
 
+
+
+  _____   ___ ______  ______  ____  ____    ____  _____ _____   __  ____     ___    ___  ____       ____  _____
+ / ___/  /  _]      ||      ||    ||    \  /    |/ ___// ___/  /  ]|    \   /  _]  /  _]|    \     |    |/ ___/
+(   \_  /  [_|      ||      | |  | |  _  ||   __(   \_(   \_  /  / |  D  ) /  [_  /  [_ |  _  |    |__  (   \_ 
+ \__  ||    _]_|  |_||_|  |_| |  | |  |  ||  |  |\__  |\__  |/  /  |    / |    _]|    _]|  |  |    __|  |\__  |
+ /  \ ||   [_  |  |    |  |   |  | |  |  ||  |_ |/  \ |/  \ /   \_ |    \ |   [_ |   [_ |  |  | __/  |  |/  \ |
+ \    ||     | |  |    |  |   |  | |  |  ||     |\    |\    \     ||  .  \|     ||     ||  |  ||  \  `  |\    |
+  \___||_____| |__|    |__|  |____||__|__||___,_| \___| \___|\____||__|\_||_____||_____||__|__||__|\____| \___|
+
+SettingsScreen.js contains the code for a few things The ability to log off of the application is within this file. The user has the ability to select from a few different static colors to reflect their profile picture 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'black'. The respective view and style sheet for designing the settings screen is contained within this file. Important pieces of data within this code is SelectedColor, SetSelectedColor. Const handleLogout() =>
+                                                                                                               
+
+
+ _____  ____  ____     ___  ____    ____  _____   ___      ____  _____
+|     ||    ||    \   /  _]|    \  /    |/ ___/  /  _]    |    |/ ___/
+|   __| |  | |  D  ) /  [_ |  o  )|  o  (   \_  /  [_     |__  (   \_ 
+|  |_   |  | |    / |    _]|     ||     |\__  ||    _]    __|  |\__  |
+|   _]  |  | |    \ |   [_ |  O  ||  _  |/  \ ||   [_  __/  |  |/  \ |
+|  |    |  | |  .  \|     ||     ||  |  |\    ||     ||  \  `  |\    |
+|__|   |____||__|\_||_____||_____||__|__| \___||_____||__|\____| \___|
+                                                                      
+
+Firebase.js is the respective code to link the database to the mobile application this is done through API and settings configuration
+
+
+
+
                                                                        
 
